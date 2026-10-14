@@ -1,0 +1,57 @@
+CANTÙ SSOTA — GESTIONALE MOBILE v2.1 | iPHONE + ANDROID
+Martinengo · 1395–1470 · colori verde brillante e giallo sole
+
+CONTENUTO
+01_APP_WEB_INSTALLABILE: PWA completa, con file index.html, icone, manifest e service worker.
+02_PROGETTO_APP_NATIVE: progetto Capacitor per generare app Android e iOS.
+Non contiene nominativi o dati reali del gruppo.
+
+A) COME USARLA SU iPHONE SENZA INTERNET (DOPO LA PRIMA INSTALLAZIONE)
+1. Pubblica la cartella 01_APP_WEB_INSTALLABILE su un indirizzo HTTPS (per es. spazio web già vostro o GitHub Pages; non basta aprire index.html dall'app File).
+2. Apri l'indirizzo su Safari con Internet e attendi che si carichi completamente.
+3. Condividi → Aggiungi alla schermata Home → Apri come app → Aggiungi.
+4. Apri l'icona dalla Home mentre sei ancora online una volta, poi prova in modalità aereo.
+5. In “Stampe e backup” importa il JSON esportato dal PC.
+Attenzione: la prima installazione su HTTPS richiede una connessione; in seguito l'app può aprirsi e funzionare offline. Se Safari elimina dati del sito o disinstalli l'app, potresti perdere l'archivio locale non esportato.
+
+B) COME USARLA SU ANDROID
+1. Pubblica la stessa cartella su HTTPS e apri il sito in Chrome sul telefono, con Internet.
+2. Menu ⋮ → Installa app / Aggiungi a schermata Home (la dicitura varia a seconda del browser).
+3. Avvia l'app dalla nuova icona e verifica la modalità aereo.
+4. Importa il backup JSON da PC.
+
+C) COME TRASFERIRE I DATI FRA PC, iPHONE E ANDROID
+1. Sul dispositivo con dati corretti: “Stampe e backup” → “Condividi su telefono” o “Salva backup JSON”.
+2. Salva il file BACKUP_CANTU_SSOTA_aaaa-mm-gg.json nell'app File / Download / chiavetta / altro mezzo sicuro.
+3. Sul secondo dispositivo fai PRIMA un backup dei suoi dati, poi “Scegli backup da ripristinare” → seleziona JSON.
+4. L'importazione SOSTITUISCE L'ARCHIVIO di quel dispositivo. Non esiste fusione dati, sincronizzazione in tempo reale o accesso simultaneo multiutente.
+5. Conserva sempre almeno due copie di sicurezza in posti distinti. Il backup contiene dati personali e foto: non inviarlo in gruppi pubblici.
+
+D) PROGETTO PER VERI PACCHETTI ANDROID E iOS (RISERVATO A CHI PUÒ COMPILARE)
+Richiede Node.js e Android Studio (Android) o un Mac con Xcode (iOS). Il progetto allegato è il CODICE SORGENTE, non un .APK o un .IPA già installabile.
+Da terminale nella cartella 02_PROGETTO_APP_NATIVE:
+  npm install
+  npm run build
+  npm run android:init        # prima volta, richiede Android Studio / Android SDK
+  npm run android:sync
+  npm run android:open        # Android Studio: Build APK e installazione sul telefono
+Su Mac per iPhone:
+  npm run ios:init            # prima volta
+  npm run ios:sync
+  npm run ios:open            # Xcode: impostare firma Apple e installare
+Le app native non richiedono alcun server Internet durante il normale utilizzo; la compilazione dipende dai requisiti degli strumenti Apple/Google. Anche le app native conservano un archivio locale separato, trasferibile via JSON.
+
+E) CONTROLLI E LIMITI
+- Archivio nel localStorage del browser/WebView: non cancellare dati del sito né usare navigazione privata.
+- Evita fotografie molto grandi: nell'app vengono create miniature, ma lo spazio resta limitato.
+- Usa preferibilmente un solo archivio principale; aggiorna i telefoni importando una copia dopo le modifiche.
+- Nessun account, telemetria o invio automatico di dati.
+- Il codice non è una soluzione certificata per proteggere dati sensibili: evita dati sanitari e limita i recapiti.
+
+PER MODIFICHE: aggiorna prima il codice sorgente, quindi ripubblica la PWA oppure ricompila le app native.
+
+F) STAMPA IN A4 VERTICALE (NOVITA 2.1)
+Tutte le schede, i registri delle presenze, gli elenchi, gli ordini di corteo e i cartellini sono predisposti in A4 verticale.
+Vai in Stampe e backup e seleziona il modello; in Anteprima di stampa controlla il formato A4 e l'orientamento Verticale se il browser non rispetta automaticamente le impostazioni.
+Le tabelle larghe vengono compattate e suddivise su piu pagine verticali; le intestazioni si ripetono a ogni pagina.
+Per usare l'aggiornamento su una web app gia installata, ripubblica i file e riapri l'app online una volta, attendendo l'aggiornamento automatico. I dati esistenti restano nella memoria locale se non cancelli i dati del sito, ma ESEGUI PRIMA UN BACKUP JSON.
